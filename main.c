@@ -1,9 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 #include <time.h>
 
-/*Declaracion de las funciones 
+/*Declaraciones de las funciones 
  * a usar para los ejercicios.
  * Las implementaciones estan en la parte
  * de abajo del archivo despues de la funcion main() 
@@ -18,14 +19,18 @@ int valid_number(int number);
 //Funciones cuarto ejercicio.
 typedef float (*Discount_func)(float, int); //Puntero a una funcion.
 char* age_category(int age);  //Funcion para determinar la edad.
-float discount_by_age(float original_price, int age);
-float final_price(float original_price, int age, Discount_func discount_function);
+float discount_by_age(float original_price, int age); //Funcion para calcular el descuento segun la edad.
+float final_price(float original_price, int age, Discount_func discount_function); //Funcion returna el precio final.
 //Funcion quinto ejercicio.
 double calculator(void);
 //Funcion sexto ejercicio.
 int secret_number(void);
 //Funcion septimo ejercicio.
 void password();
+//Funcion octavo ejercicio.
+double taxes(double salary);
+//Funcion noveno ejercicio.
+char grades(char grade);
 
 int main(){
   //Primer ejercicio
@@ -74,6 +79,14 @@ int main(){
   
   //Septimo ejercicio.
   password();
+  
+  //Octavo ejercicio.
+  double salary, tax_percent;
+  tax_percent = taxes(salary);
+
+  //Noveno ejercicio.
+  char grade, final_grade;
+  final_grade = grades(grade);
   return 0;
 }
 
@@ -218,4 +231,27 @@ void password(){
   if (attempts == 3) {
     printf("Too many failed attempts\n");
   }
+}
+ 
+ //Implemetacion de la funcion del octavo ejercicio.
+double taxes(double salary){
+  double tax = 0.0;
+  double user_salary = printf("Introduzca su salario: ");
+  scanf("%lf", &user_salary);
+
+  if (user_salary < 10000){
+    tax = 0.0;
+  } else if(user_salary >= 10000 && user_salary <= 20000){
+    tax = user_salary * 0.10;
+  } else if(user_salary > 20000){
+    tax = user_salary * 0.20;
+  }
+
+  printf("El impuesto a pagar es del %.2lf\n", user_salary);  
+  return tax;  
+}
+
+//Implemetacion de la funcion del octavo ejercicio.
+char grades(char grade){
+
 }
