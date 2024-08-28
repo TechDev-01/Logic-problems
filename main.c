@@ -290,25 +290,33 @@ void grades(){
     printf("Su calificacion final es: %c\n", letter); 
 }
 
-//Implemetacion de la funcion del noveno ejercicio.
+//Implemetacion de la funcion del decimo ejercicio.
 void options_menu(){
-    char options[5][20] = {
-      "Option one",
-      "Option two",
-      "Option three",
-      "Option four",
-      "Option five",
+    const char* options[] = {
+      "Option 1",
+      "Option 2",
+      "Option 3",
+      "Option 4",
+      "Option 5",
+      "Exit"
     }; 
+    int num_options = sizeof(options) / sizeof(options[0]);
+    int option;
+
+    do {
+      printf("\n--- Options ---\n");
+      for (int i = 0; i < num_options; i++) {
+        printf("%d. %s\n", i + 1, options[i]);  
+      }
+      
+      printf("Choose an option: ", option);
+      scanf("%d", &option);
+
+      if (option >= 1 && option <= 5) {
+        printf("You choose the option %d\n");
+      } else if(option != 6){
+        printf("Invalid option, try again\n");
+      }
+    } while (option != 6);
     
-    for (int i = 0; i < 5; i++){
-        printf("%s\n", options[i]);
-    }
-
-    char usr_prompt[25];
-    printf("Inserte una opcion valida: ");
-    scanf("%s\n", &usr_prompt);
-
-    if(usr_prompt == "one"){
-      printf("You've choosed the option number one");
-    }
 }
