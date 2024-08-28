@@ -30,7 +30,9 @@ void password();
 //Funcion octavo ejercicio.
 double taxes(double salary);
 //Funcion noveno ejercicio.
-char grades(char grade);
+void grades();
+//Funcion decimo ejercicio.
+void options_menu();
 
 int main(){
   //Primer ejercicio
@@ -38,55 +40,57 @@ int main(){
   check_condition(2);
   
   //Segundo ejercicio (DEBE DE HABER UNA MEJOR FORMA DE HACER ESTO)
-  int num1 = 5;
-  int num2 = 10;
-  int num3 = 20;
-  int mayor;
-  int sum;
-  mayor = sum_numbers(num1,num2,num3);
-  //Mostrar cual es mayor
-  printf("El numero mayor es: %d\n", mayor);
+  // int num1 = 5;
+  // int num2 = 10;
+  // int num3 = 20;
+  // int mayor;
+  // int sum;
+  // mayor = sum_numbers(num1,num2,num3);
+  // //Mostrar cual es mayor
+  // printf("El numero mayor es: %d\n", mayor);
   
-  if (mayor >= 0) {
-    sum = num1 + num2 + num3;
-    printf("La suma de los tres valores es: %d\n", sum);
-  }
+  // if (mayor >= 0) {
+  //   sum = num1 + num2 + num3;
+  //   printf("La suma de los tres valores es: %d\n", sum);
+  // }
 
   //Tercer ejercicio.
-  valid_number(9);
+  //valid_number(9);
   
   //Cuarto ejercicio.
-  int age = 67;
-  float buy_price = 55.10;
-  float price_final;
+  // int age = 67;
+  // float buy_price = 55.10;
+  // float price_final;
 
-  char* category = age_category(age);
-  printf("la persona es: %s\n", category);
-  //Verificar si la edad es mayor a 65 y aplicar el descuento.
-  if (age >= 65) {
-    printf("Ingrese el precio de la compra: %.2f\n", buy_price);
-    //Se pasa la funcion de descuento como parametro a final_price()
-    price_final = final_price(buy_price, age, discount_by_age);
+  // char* category = age_category(age);
+  // printf("la persona es: %s\n", category);
+  // //Verificar si la edad es mayor a 65 y aplicar el descuento.
+  // if (age >= 65) {
+  //   printf("Ingrese el precio de la compra: %.2f\n", buy_price);
+  //   //Se pasa la funcion de descuento como parametro a final_price()
+  //   price_final = final_price(buy_price, age, discount_by_age);
     
-    printf("El precio despues de el descuento es: %.2f\n", price_final);
-  }
+  //   printf("El precio despues de el descuento es: %.2f\n", price_final);
+  // }
 
   //Quinto ejercicio.
-  calculator();
+  //calculator();
   
   //Sexto ejercicio.
-  secret_number();
+  //secret_number();
   
   //Septimo ejercicio.
-  password();
+  //password();
   
   //Octavo ejercicio.
-  double salary, tax_percent;
-  tax_percent = taxes(salary);
+  //double salary, tax_percent;
+  //tax_percent = taxes(salary);
 
-  //Noveno ejercicio.
-  char grade, final_grade;
-  final_grade = grades(grade);
+  //Noveno ejercicio.  
+  //grades();
+
+  //Decimo ejercicio.
+  options_menu();
   return 0;
 }
 
@@ -251,7 +255,60 @@ double taxes(double salary){
   return tax;  
 }
 
-//Implemetacion de la funcion del octavo ejercicio.
-char grades(char grade){
+//Implemetacion de la funcion del noveno ejercicio.
+void grades(){
+    float usr_grade, attendance;
+    char letter;
+    printf("Inserte su nota: ");
+    scanf("%f", &usr_grade);
 
+    if (usr_grade >= 100){
+        letter = 'A';
+    } else if (usr_grade >= 90){
+        letter = 'B';
+    } else if(usr_grade >= 80){
+        letter = 'C';
+    } else if(usr_grade >= 70){
+        letter = 'D';
+    } else {
+        letter = 'F';
+    }
+   
+    if(letter == 'A' || letter == 'B'){
+        printf("Ingrese su asistencia: ");
+        scanf("%f", &attendance);
+
+        if(attendance < 90){
+            if(letter == 'A'){
+                letter = 'B';
+            } else if(letter == 'B'){
+                letter = 'C';
+            }
+        }
+    }
+
+    printf("Su calificacion final es: %c\n", letter); 
+}
+
+//Implemetacion de la funcion del noveno ejercicio.
+void options_menu(){
+    char options[5][20] = {
+      "Option one",
+      "Option two",
+      "Option three",
+      "Option four",
+      "Option five",
+    }; 
+    
+    for (int i = 0; i < 5; i++){
+        printf("%s\n", options[i]);
+    }
+
+    char usr_prompt[25];
+    printf("Inserte una opcion valida: ");
+    scanf("%s\n", &usr_prompt);
+
+    if(usr_prompt == "one"){
+      printf("You've choosed the option number one");
+    }
 }
