@@ -40,54 +40,54 @@ int main(){
   check_condition(2);
   
   //Segundo ejercicio (DEBE DE HABER UNA MEJOR FORMA DE HACER ESTO)
-  // int num1 = 5;
-  // int num2 = 10;
-  // int num3 = 20;
-  // int mayor;
-  // int sum;
-  // mayor = sum_numbers(num1,num2,num3);
-  // //Mostrar cual es mayor
-  // printf("El numero mayor es: %d\n", mayor);
+   int num1 = 5;
+   int num2 = 10;
+   int num3 = 20;
+   int mayor;
+   int sum;
+   mayor = sum_numbers(num1,num2,num3);
+   //Mostrar cual es mayor
+   printf("El numero mayor es: %d\n", mayor);
   
-  // if (mayor >= 0) {
-  //   sum = num1 + num2 + num3;
-  //   printf("La suma de los tres valores es: %d\n", sum);
-  // }
+   if (mayor >= 0) {
+     sum = num1 + num2 + num3;
+     printf("La suma de los tres valores es: %d\n", sum);
+   }
 
   //Tercer ejercicio.
-  //valid_number(9);
+  valid_number(9);
   
   //Cuarto ejercicio.
-  // int age = 67;
-  // float buy_price = 55.10;
-  // float price_final;
+   int age = 67;
+   float buy_price = 55.10;
+   float price_final;
 
-  // char* category = age_category(age);
-  // printf("la persona es: %s\n", category);
+   char* category = age_category(age);
+   printf("la persona es: %s\n", category);
   // //Verificar si la edad es mayor a 65 y aplicar el descuento.
-  // if (age >= 65) {
-  //   printf("Ingrese el precio de la compra: %.2f\n", buy_price);
-  //   //Se pasa la funcion de descuento como parametro a final_price()
-  //   price_final = final_price(buy_price, age, discount_by_age);
+   if (age >= 65) {
+     printf("Ingrese el precio de la compra: %.2f\n", buy_price);
+     //Se pasa la funcion de descuento como parametro a final_price()
+     price_final = final_price(buy_price, age, discount_by_age);
     
-  //   printf("El precio despues de el descuento es: %.2f\n", price_final);
-  // }
+     printf("El precio despues de el descuento es: %.2f\n", price_final);
+   }
 
   //Quinto ejercicio.
-  //calculator();
+  calculator();
   
   //Sexto ejercicio.
-  //secret_number();
+  secret_number();
   
   //Septimo ejercicio.
-  //password();
+  password();
   
   //Octavo ejercicio.
-  //double salary, tax_percent;
-  //tax_percent = taxes(salary);
+  double salary, tax_percent;
+  tax_percent = taxes(salary);
 
   //Noveno ejercicio.  
-  //grades();
+  grades();
 
   //Decimo ejercicio.
   options_menu();
@@ -146,7 +146,7 @@ char* age_category(int age){
 
 float discount_by_age(float original_price, int age){
   if (age >= 65) {
-    return original_price * 0.8;
+   return original_price * 0.8;
   }else {
     return original_price;
   }
